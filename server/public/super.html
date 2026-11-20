@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Review — Platform Admin</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="super">
+  <section id="auth" class="auth hidden">
+    <div class="auth-card">
+      <div class="brand"><img src="icon.png" alt=""><span>Site Review <em>Platform</em></span></div>
+      <form id="setupForm" class="hidden">
+        <h1>Create the platform admin</h1>
+        <p class="muted">One-time setup for you, the tool provider. You'll add agencies after this.</p>
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Password<input name="password" type="password" minlength="8" required autocomplete="new-password"></label>
+        <label>6-digit recovery key
+          <div class="input-row"><input name="recoveryKey" inputmode="numeric" pattern="\d{6}" maxlength="6" required placeholder="e.g. 428193"><button type="button" class="btn small" data-genkey>Generate</button></div>
+          <small>Use this to sign in if you ever forget your password. Keep it safe — you are the top level, so no one can reset it for you.</small>
+        </label>
+        <p class="error" data-error></p>
+        <button class="btn primary block" type="submit">Create platform admin</button>
+      </form>
+      <form id="loginForm" class="hidden">
+        <h1>Platform admin</h1>
+        <p class="muted">Sign in to manage agency subscriptions.</p>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <div class="seg login-mode">
+          <button type="button" data-m="password" class="on">Password</button>
+          <button type="button" data-m="key">6-digit key</button>
+        </div>
+        <label class="lf-password">Password<input name="password" type="password" autocomplete="current-password"></label>
+        <label class="lf-key hidden">6-digit recovery key<input name="recoveryKey" inputmode="numeric" pattern="\d{6}" maxlength="6" autocomplete="off" placeholder="6 digits"></label>
+        <p class="error" data-error></p>
+        <button class="btn primary block" type="submit">Sign in</button>
+        <p class="muted center small" style="margin-top:14px">Not a platform admin? <a href="/">Go to the agency sign-in</a></p>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" class="hidden">
+    <header class="topbar">
+      <div class="brand"><img src="icon.png" alt=""><span>Site Review <em>Platform</em></span></div>
+      <div style="flex:1"></div>
+      <div class="account">
+        <button class="avatar-btn" id="accountBtn"><span class="avatar" id="meAvatar"></span><span id="meName"></span></button>
+        <div class="menu hidden" id="accountMenu">
+          <div class="menu-head"><strong id="meName2"></strong><span id="meEmail"></span></div>
+          <button data-action="change-email">Change email</button>
+          <button data-action="change-password">Change password</button>
+          <button data-action="change-key">Change recovery key</button>
+          <button data-action="logout">Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="stats s6">
+        <div class="stat"><span class="num" id="stAgencies">0</span><span>Agencies</span></div>
+        <div class="stat"><span class="num" id="stActive">0</span><span>Active</span></div>
+        <div class="stat"><span class="num ok-soon" id="stSoon">0</span><span>Expiring ≤7d</span></div>
+        <div class="stat"><span class="num warn" id="stExpired">0</span><span>Expired</span></div>
+        <div class="stat"><span class="num" id="stReviewers">0</span><span>Reviewers</span></div>
+        <div class="stat"><span class="num" id="stComments">0</span><span>Comments</span></div>
+      </div>
+
+      <div class="toolbar">
+        <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Search agencies or owners…"></div>
+        <div class="seg" id="stateSeg">
+          <button data-state="all" class="on">All</button><button data-state="active">Active</button>
+          <button data-state="grace">Grace</button><button data-state="expired">Expired</button><button data-state="suspended">Suspended</button>
+        </div>
+        <button class="btn primary" id="addBtn"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add agency</button>
+      </div>
+
+      <div id="agencyList" class="list"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal-back hidden"><div class="modal" id="modalShell"><div id="modalBody"></div></div></div>
+  <div id="toast" class="toast hidden"></div>
+  <script src="super.js"></script>
+</body>
+</html>

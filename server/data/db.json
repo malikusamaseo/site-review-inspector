@@ -1,0 +1,355 @@
+{
+  "agencies": [
+    {
+      "id": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "name": "P&S Logistics",
+      "plan": "monthly",
+      "status": "active",
+      "expiresAt": "2026-11-13T00:00:00.000Z",
+      "graceDays": 1,
+      "maxReviewers": null,
+      "createdAt": "2026-11-12T08:59:41.166Z"
+    },
+    {
+      "id": "0e1ddeb3-8268-4c77-988f-4ce830de5b62",
+      "name": "EMU Car Carriers",
+      "plan": "monthly",
+      "status": "active",
+      "expiresAt": "2026-11-17T00:00:00.000Z",
+      "graceDays": 2,
+      "maxReviewers": null,
+      "createdAt": "2026-11-13T07:38:37.239Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "name": "Usama Saleem",
+      "email": "malikusama.seo@gmail.com",
+      "role": "superadmin",
+      "agencyId": null,
+      "active": true,
+      "passwordHash": "scrypt$d7c9382425dae564bf64a5fe5d33081d$5b8f64e3d8a05f3ec4dd0a1d8706034275d5bf690a16f29ad91f27a5fea437fa92256e8a6445a83613b8a4413f9c5aea28b81c6eb39062590a34833426ef9950",
+      "createdAt": "2026-11-12T08:49:40.760Z",
+      "lastLoginAt": "2026-11-13T04:08:33.906Z",
+      "recoveryKeyHash": "scrypt$cb5b8840f7d69abcc61a0a3ee02baa5e$b3f62fbdc150f8af1d2c92d224ccb63159c23c17067f9b92f2fb3e75fb31ac0838185c06ed9c8aada62a9b9e8eadd5bbe9766d34a7c72966ff20487aef2db007"
+    },
+    {
+      "id": "3caabd59-388f-4c4f-9b8d-055738c905a1",
+      "name": "Mr. Leonard",
+      "email": "dhoffmanleonard@gmail.com",
+      "role": "owner",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "active": true,
+      "allowedSites": [],
+      "passwordHash": "scrypt$a92445b6525da82388f2bc885df7cedc$292377d8cd2e5de85a1df32638b5bd4e099db3bb1d6be0b8225de49ba2aaf48061e0d284e8019429b116b6d3ba4a5cf6b3da37de5dd928c3ebf9b512ecd5a209",
+      "createdAt": "2026-11-12T08:59:41.222Z",
+      "lastLoginAt": "2026-11-13T08:07:20.797Z",
+      "recoveryKeyHash": "scrypt$87539f770ea2084875f814b0b9fe1f85$0de8f6a4bdca1f12d087876200293b9da02aa6ead5ba6edfeac3190d7cc688e68de04f807faac789f41dc12dd1d14dff81d3dc100dd2f1e04e54e3c2b8229f2f"
+    },
+    {
+      "id": "66dc6c82-9878-437a-8ba5-12ed15d6f4e5",
+      "name": "Usama Saleem REV",
+      "email": "malikusama8756@gmail.com",
+      "role": "reviewer",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "active": true,
+      "allowedSites": [
+        "pslogistics.com.au"
+      ],
+      "passwordHash": "scrypt$d44667b8c859626abc93a65c2bf8262e$5c69f128eb1de7679b6ccc0a67541fe75dda97cb8a72ebc25babe73a357584673fa048f499939043700dd65e57872ddf2cd9a308501183dad36f4cc9990baf33",
+      "createdAt": "2026-11-12T09:37:15.990Z",
+      "lastLoginAt": "2026-11-13T03:55:32.004Z"
+    },
+    {
+      "id": "59ee1887-c28a-4266-861e-ff1fd096a341",
+      "name": "Scouth",
+      "email": "scouthaywardscout@gmail.com",
+      "role": "developer",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "active": true,
+      "allowedSites": [
+        "pslogistics.com.au"
+      ],
+      "passwordHash": "scrypt$a58193af8a002d99e19e44dd2e126f9c$daa0c7bee6ee49b07af144f771aa93ff45e570b55dedd64fd49c5cced6270d590509dff2860123301eec75bb9484279f5707b488ece95ff2b4a65cc5169117d3",
+      "createdAt": "2026-11-12T09:46:04.527Z",
+      "lastLoginAt": "2026-11-13T04:16:21.797Z",
+      "recoveryKeyHash": "scrypt$3fb04bb163880ce645904747a6a7e234$bd8a06f927e990c7f59a1937bd5920efde0e2659b8909e9e544b3ff69d2158a0a5c847b20274790a63972af2871f09faa91792d445d30980d85aa0a5baf96b8a"
+    },
+    {
+      "id": "0786dd72-feee-4580-98ae-b89d1f09741d",
+      "name": "M. Rizwan",
+      "email": "emucarcarriers@gmail.com",
+      "role": "owner",
+      "agencyId": "0e1ddeb3-8268-4c77-988f-4ce830de5b62",
+      "active": true,
+      "allowedSites": [],
+      "passwordHash": "scrypt$fea89534e4fe346898047de0481a635e$32cafab4e8e8af9d5cac06406f5924ed8ca943e5b21f95d808c291390114304aa586c892c0ed8d2147ee82ee555ff69a924c1389984f44ca5da3e544566dfed4",
+      "recoveryKeyHash": "scrypt$acf7be734f0500b47143ef530a14a038$4ce1e6a136b1cf08f0a749d77ed295cd366b23d1cc09c0e8f8392576a117617840221fcadc32b2001215e3b232d10d5f598a29066956d4fd5c9ee76028141f45",
+      "createdAt": "2026-11-13T07:38:37.353Z",
+      "lastLoginAt": "2026-11-13T08:08:21.367Z"
+    },
+    {
+      "id": "3a04b4d4-12f1-48e1-b0c8-3e399326c9bd",
+      "name": "pslogistics",
+      "email": "alexalyne06@gmail.com",
+      "role": "developer",
+      "agencyId": "0e1ddeb3-8268-4c77-988f-4ce830de5b62",
+      "active": true,
+      "allowedSites": [
+        "pslogistics.com.au",
+        "emucarcarriers.com.au"
+      ],
+      "passwordHash": "scrypt$91a64845a7fcb90b7dad56c41b9f0e96$7aed1abad52fc65c26a23f6e7d5d380261a122d877c4ed41e75255b94c7a9c8fa6da1a5314eff532ed15a8283eb81486d4ad9a6a0acd2f4b721c06269f018f54",
+      "recoveryKeyHash": "scrypt$b275ed72bf48713ca0aad12f76ea0a1a$a549da0ed14d3dd27e6e71be678b1cd7968555a0db9441a586f9c4cbe87e9687f8abf2644a54e669d3652da291e7d3278ad3938113288e00b293e0829aa402ab",
+      "createdAt": "2026-11-13T08:09:31.049Z",
+      "lastLoginAt": "2026-11-13T08:11:16.223Z"
+    }
+  ],
+  "sessions": [
+    {
+      "tokenHash": "619db0369ba3c19c54100f0371acfac28d837ff40ccf51503fbf8d483d3fcde8",
+      "userId": "66dc6c82-9878-437a-8ba5-12ed15d6f4e5",
+      "createdAt": "2026-11-12T09:38:09.894Z",
+      "expiresAt": "2026-12-12T09:38:09.894Z"
+    },
+    {
+      "tokenHash": "3f4614d5c2b3d99571651e3ae0756559cc872ecff8e371624e3e304ae5274cd2",
+      "userId": "66dc6c82-9878-437a-8ba5-12ed15d6f4e5",
+      "createdAt": "2026-11-13T03:55:32.004Z",
+      "expiresAt": "2026-12-13T03:55:32.004Z"
+    },
+    {
+      "tokenHash": "18dac0b93b0e580484336d950b87e88f0f4b363244ed65dd9de009d80955f4b3",
+      "userId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "createdAt": "2026-11-13T04:08:33.906Z",
+      "expiresAt": "2026-12-13T04:08:33.906Z"
+    },
+    {
+      "tokenHash": "1d922dcc42b98a624682fd123224b766bc24b013c01b13d644130bb191b49961",
+      "userId": "3caabd59-388f-4c4f-9b8d-055738c905a1",
+      "createdAt": "2026-11-13T04:15:21.084Z",
+      "expiresAt": "2026-12-13T04:15:21.084Z"
+    },
+    {
+      "tokenHash": "700974455454c9c427abead17bec96ba3b838f06bb7e300f80f0e97e5d9e0ca3",
+      "userId": "59ee1887-c28a-4266-861e-ff1fd096a341",
+      "createdAt": "2026-11-13T04:16:21.797Z",
+      "expiresAt": "2026-12-13T04:16:21.797Z"
+    },
+    {
+      "tokenHash": "6751fea2dda1eaed3b4ac20694750d48203d1c0314d9a5ee01f91e40620555b1",
+      "userId": "3caabd59-388f-4c4f-9b8d-055738c905a1",
+      "createdAt": "2026-11-13T08:07:05.322Z",
+      "expiresAt": "2026-12-13T08:07:05.322Z"
+    },
+    {
+      "tokenHash": "32efbb266f6ae4924bab8d86d805d15e87d58585abae5a948ff2270dfff2c5fe",
+      "userId": "3caabd59-388f-4c4f-9b8d-055738c905a1",
+      "createdAt": "2026-11-13T08:07:20.797Z",
+      "expiresAt": "2026-12-13T08:07:20.797Z"
+    },
+    {
+      "tokenHash": "564efbdb88a33ea86fb55116620cfee9b4fea6639c9f8310c0713cdbd0bdba3a",
+      "userId": "0786dd72-feee-4580-98ae-b89d1f09741d",
+      "createdAt": "2026-11-13T08:08:13.628Z",
+      "expiresAt": "2026-12-13T08:08:13.628Z"
+    },
+    {
+      "tokenHash": "6db6558cc36858c3950a11cb1d054256bceaccfef38a471b1275f617960dcc03",
+      "userId": "0786dd72-feee-4580-98ae-b89d1f09741d",
+      "createdAt": "2026-11-13T08:08:21.367Z",
+      "expiresAt": "2026-12-13T08:08:21.367Z"
+    },
+    {
+      "tokenHash": "d374ec08c0ef2516bc3844c50ee8c7c8f23d4619f44e00f1efe2518c36dae079",
+      "userId": "0786dd72-feee-4580-98ae-b89d1f09741d",
+      "createdAt": "2026-11-13T08:56:36.308Z",
+      "expiresAt": "2026-12-13T08:56:36.308Z",
+      "imp": {
+        "superadminId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+        "agencyId": "0e1ddeb3-8268-4c77-988f-4ce830de5b62"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "id": "ff4cc766-a714-40c6-9b13-d05bdc48f505",
+      "number": 1,
+      "status": "resolved",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "userId": "66dc6c82-9878-437a-8ba5-12ed15d6f4e5",
+      "userEmail": "malikusama8756@gmail.com",
+      "userName": "Usama Saleem REV",
+      "authorName": "Usama Saleem REV",
+      "description": "Change it to Our Express Routes",
+      "url": "https://pslogistics.com.au/",
+      "pageKey": "https://pslogistics.com.au/",
+      "host": "pslogistics.com.au",
+      "pageTitle": "Interstate Car Transport Australia | Get Free Quotes | P&S Logistics",
+      "element": {
+        "selector": "div.d-flex.justify-content-center > div.container > div.text-center.pb-3 > h2.heading-color",
+        "xpath": "/html[1]/body[1]/div[8]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+        "tag": "h2",
+        "id": "",
+        "classes": [
+          "heading-color"
+        ],
+        "text": "Our Popular Routes",
+        "html": "<h2 class=\"heading-color\"> Our Popular Routes </h2>",
+        "attributes": {},
+        "styles": {
+          "fontFamily": "Lato, sans-serif",
+          "fontSize": "35px",
+          "fontWeight": "900",
+          "lineHeight": "42px",
+          "color": "rgb(44, 54, 145)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "margin": "0px 0px 8px",
+          "padding": "0px",
+          "display": "block",
+          "textAlign": "center",
+          "borderRadius": "0px"
+        },
+        "rect": {
+          "x": 624.5,
+          "y": 385,
+          "width": 1296,
+          "height": 42
+        }
+      },
+      "viewport": {
+        "width": 2560,
+        "height": 1271,
+        "dpr": 1,
+        "scrollX": 0,
+        "scrollY": 3938
+      },
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+      "screenshot": "ff4cc766-a714-40c6-9b13-d05bdc48f505.jpg",
+      "createdAt": "2026-11-12T09:39:58.661Z",
+      "resolvedAt": "2026-11-12T10:15:33.822Z",
+      "deletionRequest": {
+        "by": "59ee1887-c28a-4266-861e-ff1fd096a341",
+        "byName": "Scouth",
+        "byEmail": "scouthaywardscout@gmail.com",
+        "note": "No need to update it.",
+        "at": "2026-11-12T10:11:18.558Z",
+        "status": "cancelled",
+        "cancelNote": "Update it now",
+        "cancelledAt": "2026-11-12T10:12:13.199Z",
+        "cancelledByName": "Mr. Leonard"
+      }
+    },
+    {
+      "id": "973cd0a0-0f83-4f32-91a6-5a7aebaaa7c6",
+      "number": 2,
+      "status": "open",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "userId": "66dc6c82-9878-437a-8ba5-12ed15d6f4e5",
+      "userEmail": "malikusama8756@gmail.com",
+      "userName": "Usama Saleem REV",
+      "authorName": "Usama Saleem REV",
+      "description": "Chenage the image",
+      "url": "https://pslogistics.com.au/",
+      "pageKey": "https://pslogistics.com.au/",
+      "host": "pslogistics.com.au",
+      "pageTitle": "Interstate Car Transport Australia | Get Free Quotes | P&S Logistics",
+      "element": {
+        "selector": "div.col-xl-3.col-lg-4:nth-of-type(2) > div.card.shadow > a > div.card-body.text-dark",
+        "xpath": "/html[1]/body[1]/div[3]/section[1]/div[1]/div[2]/div[2]/div[1]/a[1]/div[1]",
+        "tag": "div",
+        "id": "",
+        "classes": [
+          "card-body",
+          "text-dark"
+        ],
+        "text": "Interstate Transport Car Transportation, Fast & Reliable, Free Quotation",
+        "html": "<div class=\"card-body text-dark\">\n                            <h3 class=\"fw-bold fs-5\" style=\"color: #2c3691;\">Interstate Transport</h3>\n                            <p class=\"card-text\">Car Transportation, Fast &amp; Reliable, Free Quotation</p>\n\n                        </div>",
+        "attributes": {},
+        "styles": {
+          "fontFamily": "Lato, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "lineHeight": "30.6px",
+          "color": "rgb(33, 37, 41)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "margin": "0px",
+          "padding": "16px",
+          "display": "block",
+          "textAlign": "start",
+          "borderRadius": "0px"
+        },
+        "rect": {
+          "x": 910.5,
+          "y": 779.5,
+          "width": 349,
+          "height": 125.2
+        }
+      },
+      "viewport": {
+        "width": 2560,
+        "height": 1271,
+        "dpr": 1,
+        "scrollX": 0,
+        "scrollY": 1080
+      },
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+      "screenshot": "973cd0a0-0f83-4f32-91a6-5a7aebaaa7c6.jpg",
+      "createdAt": "2026-11-13T03:55:01.071Z",
+      "resolvedAt": null,
+      "deletionRequest": null
+    }
+  ],
+  "accessLog": [
+    {
+      "id": "4f0dbded-492f-443f-b2a6-1aa9bad6a41a",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "superadminId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "superadminEmail": "malikusama.seo@gmail.com",
+      "superadminName": "Usama Saleem",
+      "at": "2026-11-12T09:43:54.571Z"
+    },
+    {
+      "id": "0644ba29-f945-42c0-8abf-e61844c37f79",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "superadminId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "superadminEmail": "malikusama.seo@gmail.com",
+      "superadminName": "Usama Saleem",
+      "at": "2026-11-12T09:44:11.223Z"
+    },
+    {
+      "id": "8c20e603-a485-4de3-bc9a-9f44522aac34",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "superadminId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "superadminEmail": "malikusama.seo@gmail.com",
+      "superadminName": "Usama Saleem",
+      "at": "2026-11-12T10:18:20.388Z"
+    },
+    {
+      "id": "ed7989b6-1aa9-4862-95ab-2eb0a38f74d0",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "superadminId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "superadminEmail": "malikusama.seo@gmail.com",
+      "superadminName": "Usama Saleem",
+      "at": "2026-11-13T03:23:59.241Z"
+    },
+    {
+      "id": "f2520ad8-e6c4-41fa-8c68-30f6e4870dd9",
+      "agencyId": "c0943bdf-cb48-488c-bff5-cf8430bea7fb",
+      "superadminId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "superadminEmail": "malikusama.seo@gmail.com",
+      "superadminName": "Usama Saleem",
+      "at": "2026-11-13T03:39:50.587Z"
+    },
+    {
+      "id": "503c0f27-86b9-45a5-adae-5386d7c2c440",
+      "agencyId": "0e1ddeb3-8268-4c77-988f-4ce830de5b62",
+      "superadminId": "8a9fc8e6-ba8a-439d-9bd7-5cfca61c9c1a",
+      "superadminEmail": "malikusama.seo@gmail.com",
+      "superadminName": "Usama Saleem",
+      "at": "2026-11-13T08:56:36.307Z"
+    }
+  ],
+  "seq": 2
+}

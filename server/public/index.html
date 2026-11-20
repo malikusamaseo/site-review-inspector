@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Review Dashboard</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Auth screens -->
+  <section id="auth" class="auth hidden">
+    <div class="auth-card">
+      <div class="brand"><img src="icon.png" alt=""><span>Site Review</span></div>
+      <form id="loginForm" class="hidden">
+        <h1>Sign in</h1>
+        <p class="muted">Dashboard for your website review comments.</p>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <div class="seg login-mode">
+          <button type="button" data-m="password" class="on">Password</button>
+          <button type="button" data-m="key">6-digit key</button>
+        </div>
+        <label class="lf-password">Password<input name="password" type="password" autocomplete="current-password"></label>
+        <label class="lf-key hidden">6-digit recovery key<input name="recoveryKey" inputmode="numeric" pattern="\d{6}" maxlength="6" autocomplete="off" placeholder="6 digits"></label>
+        <p class="error" data-error></p>
+        <button class="btn primary block" type="submit">Sign in</button>
+        <p class="muted center small" style="margin-top:14px"><a href="#" id="forgotLink">Forgot your password and key?</a></p>
+      </form>
+      <div id="noticeBox" class="hidden">
+        <h1 id="noticeTitle"></h1>
+        <p class="muted" id="noticeText"></p>
+        <a class="btn primary block" id="noticeBtn" href="/super">Go to platform admin</a>
+        <button class="btn block" style="margin-top:8px" data-action="logout" id="noticeLogout">Sign out</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- App -->
+  <div id="app" class="hidden">
+    <div id="impBanner" class="imp-banner hidden"></div>
+    <div id="planBanner" class="hidden"></div>
+    <header class="topbar">
+      <div class="brand"><img src="icon.png" alt=""><span>Site Review</span></div>
+      <nav class="tabs">
+        <button class="tab active" data-tab="comments"><span id="commentsTabLabel">Comments</span> <span class="count" id="openCount">0</span></button>
+        <button class="tab" data-tab="team">Team</button>
+      </nav>
+      <div class="account">
+        <button class="avatar-btn" id="accountBtn"><span class="avatar" id="meAvatar"></span><span id="meName"></span></button>
+        <div class="menu hidden" id="accountMenu">
+          <div class="menu-head"><strong id="meName2"></strong><span id="meEmail"></span></div>
+          <button data-action="account" id="accountItem">Account &amp; plan</button>
+          <button data-action="change-email" id="emailItem">Request email change</button>
+          <button data-action="change-password" id="passwordItem">Change password</button>
+          <button data-action="change-key" id="keyItem">Change recovery key</button>
+          <button data-action="logout">Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Comments -->
+    <main id="tab-comments" class="page">
+      <p id="roleNote" class="role-note hidden">These are the comments you submitted with the extension. When the site owner resolves one, its status changes here automatically.</p>
+      <div class="stats">
+        <div class="stat"><span class="num" id="statOpen">0</span><span id="statOpenLabel">Open</span></div>
+        <div class="stat"><span class="num" id="statResolved">0</span><span>Resolved</span></div>
+        <div class="stat"><span class="num" id="statSites">0</span><span>Websites</span></div>
+        <div class="stat"><span class="num" id="statReviewers">0</span><span id="statLastLabel">Reviewers</span></div>
+      </div>
+      <div class="toolbar">
+        <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Search comments, pages, selectors…"></div>
+        <div class="seg" id="statusSeg">
+          <button data-status="open" class="on">Open</button><button data-status="resolved">Resolved</button><button data-status="all">All</button>
+        </div>
+        <select id="siteFilter"><option value="">All websites</option></select>
+        <select id="userFilter"><option value="">All reviewers</option></select>
+        <button class="btn" id="exportBtn"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>Export CSV</button>
+      </div>
+      <div id="commentList" class="list"></div>
+    </main>
+
+    <!-- Team -->
+    <main id="tab-team" class="page hidden">
+      <div class="team-grid">
+        <section class="panel">
+          <h2 id="addFormTitle">Add a reviewer</h2>
+          <p class="muted" id="addFormHint">Reviewers sign in to the extension with this email and password, then can inspect pages and leave comments.</p>
+          <form id="addUserForm">
+            <label id="roleField">Role
+              <select name="role" id="roleSelect">
+                <option value="reviewer">Reviewer — inspect pages and leave comments</option>
+                <option value="developer">Developer — see all comments, resolve, add reviewers</option>
+              </select>
+            </label>
+            <label>Name<input name="name" required></label>
+            <label>Email<input name="email" type="email" required></label>
+            <label>Password
+              <div class="input-row"><input name="password" required minlength="8"><button type="button" class="btn small" data-action="gen-pass">Generate</button></div>
+            </label>
+            <label>6-digit recovery key
+              <div class="input-row"><input name="recoveryKey" inputmode="numeric" pattern="\d{6}" maxlength="6" required><button type="button" class="btn small" data-action="gen-key">Generate</button></div>
+              <small>They can sign in with this if they forget their password.</small>
+            </label>
+            <label id="freeSites">Allowed websites <span class="opt">optional</span>
+              <input name="allowedSites" placeholder="example.com, client-site.co.uk">
+              <small>Leave empty to let them review any website.</small>
+            </label>
+            <div id="devSites" class="hidden">
+              <label>Allowed websites <small id="devSitesHint">Pick one or more from your assigned websites — the reviewer can only review these.</small></label>
+              <div id="sitesChoices" class="choices"></div>
+            </div>
+            <p class="error" data-error></p>
+            <button class="btn primary block" type="submit">Add person</button>
+          </form>
+          <div id="inviteBox" class="invite hidden">
+            <div class="invite-head"><strong>Reviewer added</strong><button class="btn small" data-action="copy-invite">Copy invite</button></div>
+            <pre id="inviteText"></pre>
+          </div>
+          <div class="server-url">
+            <span>Server URL for the extension</span>
+            <code id="serverUrl"></code>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>People with access</h2>
+          <div id="userList"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Comment detail drawer -->
+  <div id="drawerBack" class="drawer-back hidden"></div>
+  <aside id="drawer" class="drawer hidden" aria-label="Comment details"></aside>
+
+  <!-- Modal -->
+  <div id="modal" class="modal-back hidden">
+    <div class="modal"><div id="modalBody"></div></div>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

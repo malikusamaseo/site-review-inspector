@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Site Review Inspector",
+  "version": "1.0.0",
+  "description": "Inspect any website, click an element and leave a review comment that goes straight to the owner's dashboard.",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Site Review Inspector",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png" }
+  },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    { "matches": ["http://*/*", "https://*/*"], "js": ["content.js"], "run_at": "document_idle" }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["icons/icon48.png"], "matches": ["http://*/*", "https://*/*"] }
+  ],
+  "commands": {
+    "toggle-inspect": {
+      "suggested_key": { "default": "Alt+Shift+C" },
+      "description": "Start or stop review mode on the current page"
+    }
+  }
+}

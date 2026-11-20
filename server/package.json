@@ -1,0 +1,17 @@
+{
+  "name": "site-review-inspector-server",
+  "version": "1.0.0",
+  "description": "Server and dashboard for the Site Review Inspector extension",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.22.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true
+}

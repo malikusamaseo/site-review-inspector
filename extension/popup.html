@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="head">
+    <img src="icons/icon48.png" alt="">
+    <div><strong>Site Review</strong><span>Inspector</span></div>
+  </header>
+
+  <form id="loginView" class="view hidden" autocomplete="on">
+    <p class="intro">Sign in with the details the site owner gave you.</p>
+    <label>Email<input name="email" type="email" required autocomplete="username"></label>
+    <div class="seg login-mode">
+      <button type="button" data-m="password" class="on">Password</button>
+      <button type="button" data-m="key">6-digit key</button>
+    </div>
+    <label class="lf-password">Password<input name="password" type="password" autocomplete="current-password"></label>
+    <label class="lf-key hidden">6-digit recovery key<input name="recoveryKey" inputmode="numeric" pattern="\d{6}" maxlength="6" autocomplete="off" placeholder="6 digits"></label>
+    <details id="serverBox">
+      <summary>Server</summary>
+      <label>Review server URL<input name="server" type="url" required placeholder="https://review.yourdomain.com"></label>
+    </details>
+    <p class="error" id="loginError"></p>
+    <button class="btn primary" type="submit">Sign in</button>
+    <p class="forgot"><a href="#" id="forgotLink">Forgot your password and key?</a></p>
+  </form>
+
+  <section id="mainView" class="view hidden">
+    <div class="me">
+      <span class="avatar" id="avatar"></span>
+      <div class="who"><strong id="name"></strong><span id="email"></span></div>
+      <span class="role" id="role"></span>
+    </div>
+    <button class="btn primary big" id="inspectBtn">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+      Inspect this page
+    </button>
+    <p class="hint">Shortcut: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></p>
+    <p class="error" id="mainError"></p>
+    <label class="switch">
+      <span><strong>Show review button on websites</strong><small>Floating button at the bottom-left of every page</small></span>
+      <input type="checkbox" id="enabled"><i></i>
+    </label>
+    <div class="mystats hidden" id="myStats">
+      <div><strong id="cntPending">–</strong><span id="pendingLabel">Pending</span></div>
+      <div><strong id="cntResolved">–</strong><span>Resolved</span></div>
+    </div>
+    <button class="btn" id="dashBtn">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span id="dashLabel">Open dashboard</span>
+    </button>
+    <div class="foot"><span id="serverLabel"></span><button class="link" id="logoutBtn">Sign out</button></div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
